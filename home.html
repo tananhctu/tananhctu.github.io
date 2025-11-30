@@ -1,0 +1,889 @@
+<!doctype html>
+<html lang="vi">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CV - Nguyen Tan Anh</title>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    body {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(135deg, #1e3c72 0%, #2a5298 50%, #7e22ce 100%);
+      min-height: 100%;
+      width: 100%;
+      overflow-x: hidden;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    .cv-wrapper {
+      width: 100%;
+      padding: 40px 20px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .cv-main-container {
+      max-width: 1400px;
+      width: 100%;
+      background: rgba(255, 255, 255, 0.98);
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+      overflow: hidden;
+      position: relative;
+    }
+
+    .cv-main-container::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 6px;
+      background: linear-gradient(90deg, #667eea, #764ba2, #f093fb, #667eea);
+      background-size: 200% 100%;
+      animation: gradientShift 3s ease infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+    }
+
+    .hero-section {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 60px;
+      display: flex;
+      align-items: center;
+      gap: 50px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -10%;
+      width: 500px;
+      height: 500px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      50% { transform: translateY(-30px) rotate(180deg); }
+    }
+
+    .profile-image-container {
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .profile-image {
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      border: 8px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4), 0 0 0 15px rgba(255, 255, 255, 0.1);
+      object-fit: cover;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .profile-image:hover {
+      transform: scale(1.05) rotate(3deg);
+      box-shadow: 0 25px 70px rgba(0, 0, 0, 0.5), 0 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .hero-content {
+      flex: 1;
+      color: white;
+      z-index: 2;
+    }
+
+    .hero-content h1 {
+      font-size: 52px;
+      font-weight: 800;
+      margin: 0 0 10px 0;
+      letter-spacing: -1px;
+      text-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .hero-content .job-title {
+      font-size: 24px;
+      font-weight: 400;
+      margin-bottom: 25px;
+      opacity: 0.95;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .hero-content .profile-summary {
+      font-size: 17px;
+      line-height: 1.8;
+      opacity: 0.9;
+      max-width: 700px;
+    }
+
+    .contact-quick {
+      display: flex;
+      gap: 30px;
+      margin-top: 30px;
+      flex-wrap: wrap;
+    }
+
+    .contact-badge {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255, 255, 255, 0.2);
+      padding: 12px 20px;
+      border-radius: 50px;
+      backdrop-filter: blur(10px);
+      font-size: 14px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-badge:hover {
+      background: rgba(255, 255, 255, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    }
+
+    .contact-badge svg {
+      width: 18px;
+      height: 18px;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 400px 1fr;
+      gap: 0;
+    }
+
+    .sidebar-content {
+      background: linear-gradient(180deg, #2d3748 0%, #1a202c 100%);
+      color: white;
+      padding: 50px 40px;
+    }
+
+    .sidebar-section {
+      margin-bottom: 45px;
+    }
+
+    .sidebar-section h2 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      letter-spacing: 1px;
+    }
+
+    .sidebar-section h2::before {
+      content: '';
+      width: 4px;
+      height: 24px;
+      background: linear-gradient(180deg, #667eea, #764ba2);
+      border-radius: 2px;
+    }
+
+    .contact-list {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .contact-item-full {
+      display: flex;
+      align-items: flex-start;
+      gap: 15px;
+      padding: 15px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      transition: all 0.3s ease;
+    }
+
+    .contact-item-full:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+    }
+
+    .contact-item-full svg {
+      width: 22px;
+      height: 22px;
+      color: #667eea;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .contact-item-full a {
+      color: #e2e8f0;
+      text-decoration: none;
+      word-break: break-word;
+      transition: color 0.3s ease;
+    }
+
+    .contact-item-full a:hover {
+      color: #667eea;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .skill-badge {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.2), rgba(118, 75, 162, 0.2));
+      padding: 12px 18px;
+      border-radius: 10px;
+      font-size: 13px;
+      font-weight: 500;
+      text-align: center;
+      color: #e2e8f0;
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .skill-badge:hover {
+      background: linear-gradient(135deg, rgba(102, 126, 234, 0.4), rgba(118, 75, 162, 0.4));
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.3);
+    }
+
+    .interests-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .interest-tag {
+      background: rgba(102, 126, 234, 0.2);
+      padding: 10px 20px;
+      border-radius: 25px;
+      font-size: 14px;
+      color: #e2e8f0;
+      border: 1px solid rgba(102, 126, 234, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .main-content {
+      padding: 50px 60px;
+      background: #ffffff;
+    }
+
+    .section-block {
+      margin-bottom: 50px;
+    }
+
+    .section-block h2 {
+      font-size: 32px;
+      font-weight: 700;
+      color: #1a202c;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+      display: inline-block;
+    }
+
+    .section-block h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      border-radius: 3px;
+    }
+
+    .education-card {
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      padding: 35px;
+      border-radius: 20px;
+      border-left: 6px solid #667eea;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+      display: grid;
+      grid-template-columns: 180px 1fr;
+      gap: 15px 30px;
+      transition: all 0.3s ease;
+    }
+
+    .education-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    }
+
+    .edu-label {
+      font-weight: 600;
+      color: #2d3748;
+      font-size: 15px;
+    }
+
+    .edu-value {
+      color: #4a5568;
+      font-size: 15px;
+    }
+
+    .skills-two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .skill-group h3 {
+      font-size: 22px;
+      color: #667eea;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+
+    .skill-list-main {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .skill-list-main li {
+      padding: 14px 18px;
+      background: linear-gradient(135deg, #f7fafc 0%, #edf2f7 100%);
+      border-radius: 12px;
+      color: #4a5568;
+      position: relative;
+      padding-left: 45px;
+      transition: all 0.3s ease;
+      border-left: 4px solid transparent;
+    }
+
+    .skill-list-main li:hover {
+      border-left-color: #667eea;
+      background: linear-gradient(135deg, #edf2f7 0%, #e2e8f0 100%);
+      transform: translateX(5px);
+    }
+
+    .skill-list-main li::before {
+      content: '✦';
+      position: absolute;
+      left: 18px;
+      color: #667eea;
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .experience-card, .project-card {
+      background: linear-gradient(135deg, #ffffff 0%, #f7fafc 100%);
+      padding: 35px;
+      border-radius: 20px;
+      margin-bottom: 25px;
+      border: 2px solid #e2e8f0;
+      transition: all 0.4s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .experience-card::before, .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 6px;
+      height: 100%;
+      background: linear-gradient(180deg, #667eea, #764ba2);
+      transform: scaleY(0);
+      transition: transform 0.4s ease;
+    }
+
+    .experience-card:hover::before, .project-card:hover::before {
+      transform: scaleY(1);
+    }
+
+    .experience-card:hover, .project-card:hover {
+      border-color: #667eea;
+      box-shadow: 0 15px 40px rgba(102, 126, 234, 0.2);
+      transform: translateY(-5px);
+    }
+
+    .experience-card h3, .project-card h3 {
+      font-size: 24px;
+      color: #1a202c;
+      margin-bottom: 10px;
+      font-weight: 600;
+    }
+
+    .meta-info {
+      color: #718096;
+      font-size: 15px;
+      margin-bottom: 18px;
+      font-style: italic;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .meta-info::before {
+      content: '📅';
+      font-size: 16px;
+    }
+
+    .description-text {
+      color: #4a5568;
+      line-height: 1.8;
+      font-size: 16px;
+    }
+
+    @media (max-width: 1200px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 30px;
+      }
+
+      .hero-content h1 {
+        font-size: 42px;
+      }
+
+      .contact-quick {
+        justify-content: center;
+      }
+
+      .skills-two-col {
+        grid-template-columns: 1fr;
+        gap: 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .cv-wrapper {
+        padding: 20px 10px;
+      }
+
+      .hero-section {
+        padding: 30px 20px;
+      }
+
+      .profile-image {
+        width: 160px;
+        height: 160px;
+      }
+
+      .hero-content h1 {
+        font-size: 32px;
+      }
+
+      .hero-content .job-title {
+        font-size: 18px;
+      }
+
+      .main-content, .sidebar-content {
+        padding: 30px 25px;
+      }
+
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .education-card {
+        grid-template-columns: 1fr;
+        gap: 12px;
+      }
+    }
+.back-portfolio {
+  position: fixed;
+  bottom: 22px;
+  right: 22px;
+  width: 90px;
+  height: 90px;
+  background: #222;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;   /* icon trên - chữ dưới */
+  align-items: center;
+  justify-content: center;
+
+  text-decoration: none;
+  box-shadow: 0 0 12px rgba(0,0,0,0.28);
+  cursor: pointer;
+  transition: 0.25s ease-in-out;
+  z-index: 9999;
+}
+
+.back-portfolio .arrow {
+  font-size: 20px;          /* icon to riêng */
+  font-weight: bold;
+}
+
+.back-portfolio .label {
+  font-size: 12px;          /* chữ nhỏ hơn */
+}
+
+.back-portfolio:hover {
+  background: #ff941f;
+  transform: scale(1.15) rotate(-8deg);
+}
+
+
+
+  </style>
+  <style>@view-transition { navigation: auto; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+  <script src="https://cdn.tailwindcss.com" type="text/javascript"></script>
+ </head>
+ <body>
+  <div class="cv-wrapper">
+   <div class="cv-main-container"><!-- Hero Section -->
+    <div class="hero-section">
+     <div class="profile-image-container"><img id="profile-image" class="profile-image" src="https://i.ibb.co/XkbdjTsp/z6749212452584-0ceedc3307ac91ba90ee1ee08b216f16.jpg" alt="Nguyen Tan Anh" onerror="this.style.display='none';">
+     </div>
+     <div class="hero-content">
+      <h1 id="full-name">NGUYEN TAN ANH</h1>
+      
+      <div id="job-title" class="job-title">
+       Software Engineer
+      </div>
+      <p id="profile-summary" class="profile-summary">I am a Software Engineer skilled in developing desktop and web applications, with experience in AI integration. I am passionate about creating intelligent systems that combine enterprise solutions with artificial intelligence to enhance productivity and user experience.</p>
+      <div class="contact-quick">
+       <div class="contact-badge">
+        <svg fill="currentColor" viewbox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /> <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+        </svg><span id="email-quick">tananh.workmail@gmail.com</span>
+       </div>
+       <div class="contact-badge">
+        <svg fill="currentColor" viewbox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+        </svg><span id="phone-quick">0975372230</span>
+       </div>
+       <div class="contact-badge">
+        <svg fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+        </svg><span id="address-quick">An Hoa, Dong Thap</span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <div class="content-grid"><!-- Sidebar -->
+     <div class="sidebar-content">
+      <div class="sidebar-section">
+       <h2>Contact Details</h2>
+       <div class="contact-list">
+        <div class="contact-item-full">
+         <svg fill="currentColor" viewbox="0 0 20 20"><path d="M2.003 5.884L10 9.882l7.997-3.998A2 2 0 0016 4H4a2 2 0 00-1.997 1.884z" /> <path d="M18 8.118l-8 4-8-4V14a2 2 0 002 2h12a2 2 0 002-2V8.118z" />
+         </svg><a id="email-full" href="mailto:tananh.workmail@gmail.com">tananh.workmail@gmail.com</a>
+        </div>
+        <div class="contact-item-full">
+         <svg fill="currentColor" viewbox="0 0 20 20"><path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+         </svg><span id="phone-full">0975372230</span>
+        </div>
+        <div class="contact-item-full">
+         <svg fill="currentColor" viewbox="0 0 20 20"><path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd" />
+         </svg><span id="address-full">An Hoa Commune, Dong Thap Province</span>
+        </div>
+       </div>
+      </div>
+      <div class="sidebar-section">
+       <h2>Core Technologies</h2>
+       <div class="skills-grid">
+        <div class="skill-badge">
+         Java
+        </div>
+        <div class="skill-badge">
+         PHP
+        </div>
+        <div class="skill-badge">
+         JavaScript
+        </div>
+        <div class="skill-badge">
+         Python
+        </div>
+        <div class="skill-badge">
+         C/C++
+        </div>
+        <div class="skill-badge">
+         Liferay
+        </div>
+        <div class="skill-badge">
+         J2EE
+        </div>
+        <div class="skill-badge">
+         Git/SVN
+        </div>
+        <div class="skill-badge">
+         AI Integration
+        </div>
+        <div class="skill-badge">
+         Linux
+        </div>
+       </div>
+      </div>
+      <div class="sidebar-section">
+       <h2>Interests</h2>
+       <div class="interests-tags">
+        <div class="interest-tag">
+         💻 Programming
+        </div>
+        <div class="interest-tag">
+         🎤 Rap Music
+        </div>
+        <div class="interest-tag">
+         ⚽ Football
+        </div>
+        <div class="interest-tag">
+         ✈️ Travel
+        </div>
+       </div>
+      </div>
+     </div><!-- Main Content -->
+     <div class="main-content">
+      <div class="section-block">
+       <h2>Education</h2>
+       <div class="education-card">
+        <div class="edu-label">
+         University
+        </div>
+        <div class="edu-value">
+         Can Tho University
+        </div>
+        <div class="edu-label">
+         Major
+        </div>
+        <div class="edu-value">
+         Computer Network and Data Communication
+        </div>
+        <div class="edu-label">
+         Duration
+        </div>
+        <div class="edu-value">
+         August 2021 – December 2025
+        </div>
+        <div class="edu-label">
+         GPA
+        </div>
+        <div class="edu-value">
+         3.19 / 4.0
+        </div>
+       </div>
+      </div>
+      <div class="section-block">
+       <h2>Professional Skills</h2>
+       <div class="skills-two-col">
+        <div class="skill-group">
+         <h3>Technical Expertise</h3>
+         <ul class="skill-list-main">
+          <li>Programming Languages: Java, PHP, JavaScript, Python, C, C++</li>
+          <li>Frameworks &amp; Tools: Liferay Portal, J2EE, Git, SVN, Postman</li>
+          <li>Specializations: AI Integration, Network Security, System Administration</li>
+          <li>Operating Systems: Linux, Windows Server</li>
+         </ul>
+        </div>
+        <div class="skill-group">
+         <h3>Soft Skills</h3>
+         <ul class="skill-list-main">
+          <li>Strong Teamwork &amp; Collaboration</li>
+          <li>Excellent Communication Skills</li>
+          <li>Advanced Problem-Solving Abilities</li>
+          <li>Critical Thinking &amp; Analysis</li>
+          <li>Detail-Oriented Approach</li>
+          <li>Fast Learning &amp; Adaptability</li>
+         </ul>
+        </div>
+       </div>
+      </div>
+      <div class="section-block">
+       <h2>Work Experience</h2>
+       <div class="experience-card">
+        <h3>MekoSoft — Internship &amp; Project Collaborator</h3>
+        <div class="meta-info">
+         August 2025 – November 2025
+        </div>
+        <p class="description-text">Developed and maintained enterprise web modules using Liferay Portal (Java-based framework) and integrated cutting-edge AI technologies into web applications to enhance functionality, user experience, and business value.</p>
+       </div>
+      </div>
+      <div class="section-block">
+       <h2>Featured Projects</h2>
+       <div class="project-card">
+        <h3>🔒 Automated Backup System</h3>
+        <div class="meta-info">
+         January 2025 – August 2025 • Sole Developer
+        </div>
+        <p class="description-text">Designed and built a comprehensive desktop application for automated enterprise data backup featuring an intuitive user interface. Implemented a hybrid multi-layer backup model supporting multiple storage destinations and advanced data encryption protocols to ensure data security and reliability.</p>
+       </div>
+       <div class="project-card">
+        <h3>🤖 AI-Enhanced English Exam Preparation System</h3>
+        <div class="meta-info">
+         October 2025 – November 2025 • Main Developer
+        </div>
+        <p class="description-text">Integrated advanced AI technologies to enhance Writing, Listening, Reading, and Speaking capabilities in an existing English exam preparation system. Leveraged OpenAI GPT for content generation, LanguageTool for grammar checking, AssemblyAI for speech recognition, and Google TTS for natural voice synthesis within a Liferay MVC Portlet architecture.</p>
+       </div>
+      </div>
+     </div>
+    </div>
+   </div>
+  </div>
+  <script>
+    const defaultConfig = {
+      full_name: "NGUYEN TAN ANH",
+      job_title: "Software Engineer",
+      profile_summary: "I am a Software Engineer skilled in developing desktop and web applications, with experience in AI integration. I am passionate about creating intelligent systems that combine enterprise solutions with artificial intelligence to enhance productivity and user experience.",
+      email: "tananh.workmail@gmail.com",
+      phone: "0975372230",
+      address: "An Hoa Commune, Dong Thap Province",
+      hero_bg: "#667eea",
+      sidebar_bg: "#2d3748",
+      accent_color: "#667eea",
+      text_color: "#4a5568",
+      font_family: "Poppins",
+      font_size: 16
+    };
+
+    async function onConfigChange(config) {
+      const customFont = config.font_family || defaultConfig.font_family;
+      const baseSize = config.font_size || defaultConfig.font_size;
+      const baseFontStack = 'sans-serif';
+
+      document.body.style.fontFamily = `${customFont}, ${baseFontStack}`;
+
+      const fullName = config.full_name || defaultConfig.full_name;
+      const jobTitle = config.job_title || defaultConfig.job_title;
+      const profileSummary = config.profile_summary || defaultConfig.profile_summary;
+      const email = config.email || defaultConfig.email;
+      const phone = config.phone || defaultConfig.phone;
+      const address = config.address || defaultConfig.address;
+
+      document.getElementById('full-name').textContent = fullName;
+      document.getElementById('job-title').textContent = jobTitle;
+      document.getElementById('profile-summary').textContent = profileSummary;
+
+      document.getElementById('email-quick').textContent = email;
+      document.getElementById('phone-quick').textContent = phone;
+      document.getElementById('address-quick').textContent = address;
+
+      const emailFull = document.getElementById('email-full');
+      emailFull.textContent = email;
+      emailFull.href = `mailto:${email}`;
+      
+      document.getElementById('phone-full').textContent = phone;
+      document.getElementById('address-full').textContent = address;
+
+      const heroBg = config.hero_bg || defaultConfig.hero_bg;
+      const sidebarBg = config.sidebar_bg || defaultConfig.sidebar_bg;
+      const accentColor = config.accent_color || defaultConfig.accent_color;
+      const textColor = config.text_color || defaultConfig.text_color;
+
+      const heroSection = document.querySelector('.hero-section');
+      heroSection.style.background = `linear-gradient(135deg, ${heroBg} 0%, #764ba2 100%)`;
+
+      const sidebarContent = document.querySelector('.sidebar-content');
+      sidebarContent.style.background = `linear-gradient(180deg, ${sidebarBg} 0%, #1a202c 100%)`;
+
+      document.documentElement.style.setProperty('--accent-color', accentColor);
+      
+      const accentElements = document.querySelectorAll('.sidebar-section h2::before, .contact-item-full svg, .section-block h2::after, .skill-group h3, .skill-list-main li::before');
+      accentElements.forEach(el => {
+        el.style.color = accentColor;
+      });
+
+      document.querySelectorAll('.description-text, .edu-value, .skill-list-main li').forEach(el => {
+        el.style.color = textColor;
+      });
+
+      document.querySelector('.hero-content h1').style.fontSize = `${baseSize * 3.25}px`;
+      document.querySelector('.hero-content .job-title').style.fontSize = `${baseSize * 1.5}px`;
+      document.querySelector('.hero-content .profile-summary').style.fontSize = `${baseSize * 1.06}px`;
+      document.querySelectorAll('.section-block h2').forEach(el => {
+        el.style.fontSize = `${baseSize * 2}px`;
+      });
+      document.querySelectorAll('.description-text').forEach(el => {
+        el.style.fontSize = `${baseSize}px`;
+      });
+    }
+
+    if (window.elementSdk) {
+      window.elementSdk.init({
+        defaultConfig,
+        onConfigChange,
+        mapToCapabilities: (config) => ({
+          recolorables: [
+            {
+              get: () => config.hero_bg || defaultConfig.hero_bg,
+              set: (value) => {
+                config.hero_bg = value;
+                window.elementSdk.setConfig({ hero_bg: value });
+              }
+            },
+            {
+              get: () => config.sidebar_bg || defaultConfig.sidebar_bg,
+              set: (value) => {
+                config.sidebar_bg = value;
+                window.elementSdk.setConfig({ sidebar_bg: value });
+              }
+            },
+            {
+              get: () => config.accent_color || defaultConfig.accent_color,
+              set: (value) => {
+                config.accent_color = value;
+                window.elementSdk.setConfig({ accent_color: value });
+              }
+            },
+            {
+              get: () => config.text_color || defaultConfig.text_color,
+              set: (value) => {
+                config.text_color = value;
+                window.elementSdk.setConfig({ text_color: value });
+              }
+            }
+          ],
+          borderables: [],
+          fontEditable: {
+            get: () => config.font_family || defaultConfig.font_family,
+            set: (value) => {
+              config.font_family = value;
+              window.elementSdk.setConfig({ font_family: value });
+            }
+          },
+          fontSizeable: {
+            get: () => config.font_size || defaultConfig.font_size,
+            set: (value) => {
+              config.font_size = value;
+              window.elementSdk.setConfig({ font_size: value });
+            }
+          }
+        }),
+        mapToEditPanelValues: (config) => new Map([
+          ['full_name', config.full_name || defaultConfig.full_name],
+          ['job_title', config.job_title || defaultConfig.job_title],
+          ['profile_summary', config.profile_summary || defaultConfig.profile_summary],
+          ['email', config.email || defaultConfig.email],
+          ['phone', config.phone || defaultConfig.phone],
+          ['address', config.address || defaultConfig.address]
+        ])
+      });
+    }
+  </script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9a63a573f0dc06e8',t:'MTc2NDQzNTQ2OS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script>
+    
+    <a href="/index.html" class="back-portfolio">
+  <span class="arrow">⬅</span>
+  <span class="label">Portfolio</span>
+</a>
+
+    </body>
+</html>
